@@ -10,7 +10,6 @@ public abstract class Projectile
     protected Rigidbody2D _rb;
     private Sprite sprite;
 
-
     public Projectile() { }
     public Projectile(float speed, float damage, Rigidbody2D _rb, Sprite sprite)
     {
@@ -19,20 +18,17 @@ public abstract class Projectile
         this._rb = _rb;
         this.sprite = sprite;
     }
-
-    protected Projectile(int v1, int v2, Sprite sprite)
+    protected Projectile(Sprite sprite)
     {
         this.sprite = sprite;
     }
-
     public Sprite GetSprite()
     {
         return sprite;
     }
     public abstract void Move();
-    public virtual GameObject Hit(GameObject reciever)
+    public virtual void Hit(GameObject projectile)
     {
-        return reciever;
     }
 }
 

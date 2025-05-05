@@ -8,6 +8,9 @@ public class ProjectileBehaviour : MonoBehaviour
   
     private float currentTime = 0;
 
+    private Projectile Projectile;
+    private GameObject enemy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +35,7 @@ public class ProjectileBehaviour : MonoBehaviour
     {
         if(collision.GetComponent<Enemy>())
         {
-
+            Projectile.Hit(enemy);
         }
     }
 }

@@ -22,7 +22,9 @@ public class PlayerShoot : MonoBehaviour
 
         if (currentTime > timeToShoot && Input.GetMouseButton(0)) 
         {
-           
+            Quaternion rot = Quaternion.Euler(0, 0, 90);
+            Instantiate(projectile, transform.position, rot);
+            currentTime = 0;
         }
 
         if(Input.GetKeyDown(KeyCode.Space))
@@ -30,4 +32,5 @@ public class PlayerShoot : MonoBehaviour
 
         }
     }
+
 }
